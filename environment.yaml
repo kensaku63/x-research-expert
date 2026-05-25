@@ -1,0 +1,18 @@
+name: x-research-expert
+description: "X research agent environment with bird CLI and X API support"
+config:
+  packages:
+    pip:
+      - requests
+      - python-dateutil
+    npm:
+      - "@steipete/bird"
+  networking:
+    type: unrestricted
+  env:
+    - name: AUTH_TOKEN
+      purpose: X web cookie auth token for bird CLI. Required with CT0 when using bird search, trend, expand, account, or bookmarks.
+    - name: CT0
+      purpose: X csrf cookie for bird CLI. Required with AUTH_TOKEN when using bird.
+    - name: X_BEARER_TOKEN
+      purpose: X API v2 bearer token for recent search, counts, lookup, and API fallback collection.
